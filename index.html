@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versace - Geschenkeratgeber</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            cursor: pointer;
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="600"><rect fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #333;
+        }
+
+        /* Split Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .split-item {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .split-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            transition: background 0.3s;
+        }
+
+        .split-item:hover::before {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .split-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .split-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .split-content {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .split-btn {
+            padding: 12px 40px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .split-btn:hover {
+            background: white;
+            color: #333;
+        }
+
+        /* Product Highlight */
+        .product-highlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 40px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 40px;
+        }
+
+        .product-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .product-info h2 {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .product-btn {
+            padding: 15px 40px;
+            border: 2px solid #333;
+            background: transparent;
+            color: #333;
+            text-transform: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .product-btn:hover {
+            background: #333;
+            color: white;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: #f8f8f8;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .newsletter-submit {
+            padding: 15px 30px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .newsletter-submit:hover {
+            background: #555;
+        }
+
+        .required-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #2b2b2b;
+            color: white;
+            padding: 60px 40px 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            padding: 20px 40px;
+            border-top: 1px solid #444;
+        }
+
+        .social-icon {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .country-selector {
+            text-align: right;
+            font-size: 13px;
+            color: #ccc;
+        }
+
+        /* Product Detail Page Styles */
+        .product-detail {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-large {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .gallery-item {
+            background: #f5f5f5;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info-detail {
+            padding: 20px 0;
+        }
+
+        .product-title {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        .product-pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 300;
+        }
+
+        .weight {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .pasta-selector {
+            margin-bottom: 30px;
+        }
+
+        .pasta-selector h3 {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .pasta-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .pasta-btn {
+            padding: 12px 30px;
+            border: 2px solid #333;
+            background: white;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pasta-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .pasta-btn.active {
+            background: #333;
+            color: white;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 18px;
+            background: #333;
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+
+        .add-to-cart:hover {
+            background: #000;
+        }
+
+        .product-details-section,
+        .nutrition-info {
+            margin-bottom: 30px;
+        }
+
+        .product-details-section h3,
+        .nutrition-info h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-details-section p,
+        .nutrition-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .nutrition-table {
+            width: 100%;
+            font-size: 13px;
+            border-collapse: collapse;
+        }
+
+        .nutrition-table tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nutrition-table td {
+            padding: 8px 0;
+        }
+
+        .nutrition-table td:first-child {
+            color: #666;
+        }
+
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            nav ul {
+                display: none;
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+
+            .product-highlight {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .header-container {
+                padding: 15px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .product-info h2 {
+                font-size: 28px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Page -->
+    <div id="main-page">
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">VERSACE</div>
+            <nav>
+                <ul>
+                    <li><a href="#geschenke">Geschenke</a></li>
+                    <li><a href="#neuzugaenge">Neuzugänge</a></li>
+                    <li><a href="#taschen">Taschen</a></li>
+                    <li><a href="#damen">Damen</a></li>
+                    <li><a href="#herren">Herren</a></li>
+                    <li><a href="#duefte">Düfte</a></li>
+                    <li><a href="#home">Home & Lifestyle</a></li>
+                    <li><a href="#kinder">Kinder</a></li>
+                    <li><a href="#jeans">Jeans Couture</a></li>
+                    <li><a href="#stories">Stories</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <span class="icon">🔍</span>
+                <span class="icon">♡</span>
+                <span class="icon">👤</span>
+                <span class="icon">🛍</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Geschenkeratgeber</h1>
+            <p>Versace ist das perfekte Geschenk. Entdecken Sie die neue Linie VERSACE AL DENTE, Accessoires und Lifestyle-Pieces für die Weihnachtszeit.</p>
+            <div class="button-group">
+                <button class="btn">Geschenke für Damen</button>
+                <button class="btn">Geschenke für Herren</button>
+                <button class="btn">Lifestyle-Geschenke</button>
+                <button class="btn">Geschenke für Alle</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section -->
+    <section class="split-section">
+        <div class="split-item">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='500'><rect fill='%23d4c4b0'/></svg>" alt="Damen">
+            <div class="split-content">
+                <button class="split-btn">Neuheiten für Damen</button>
+            </div>
+        </div>
+        <div class="split-item">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='500'><rect fill='%236b7280'/></svg>" alt="Herren">
+            <div class="split-content">
+                <button class="split-btn">Neuheiten für Herren</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Highlight -->
+    <section class="product-highlight">
+        <div class="product-image">
+            <img src="images/Verpackung_Startseite.png" alt="Versace AL DENTE">
+        </div>
+        <div class="product-info">
+            <h3>DAS PERFEKTE GESCHENK</h3>
+            <h3>DIE NEUE LINIE</h3>
+            <h2>VERSACE<br>AL DENTE</h2>
+            <button class="product-btn">Jetzt entdecken</button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <p>Melden Sie sich für unsere E-Mails an, um über Veranstaltungen, Kollektionen und exklusive Neuigkeiten auf dem Laufenden zu bleiben.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" class="newsletter-input" placeholder="Geben Sie Ihre E-Mail-Adresse ein *" required>
+            <button type="submit" class="newsletter-submit">→</button>
+        </form>
+        <p class="required-text">*Erforderlich</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>📍 STORE-FINDER</h4>
+                <ul>
+                    <li><a href="#">Boutique finden</a></li>
+                    <li><a href="#">Vereinbaren Sie einen Termin</a></li>
+                    <li><a href="#">Versace Uhren Stores</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>📱 KUNDENSERVICE</h4>
+                <ul>
+                    <li><a href="#">Exklusive Services</a></li>
+                    <li><a href="#">Pflegeanleitungen</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Hilfe & FAQs</a></li>
+                    <li><a href="#">Bestellungen & Versand</a></li>
+                    <li><a href="#">Rücksendungen & Rückerstattungen</a></li>
+                    <li><a href="#">Bestellverfolgung</a></li>
+                    <li><a href="#">Authentizität</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>👤 ÜBER UNS</h4>
+                <ul>
+                    <li><a href="#">Firmenprofil</a></li>
+                    <li><a href="#">Firmendaten</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Verantwortungsvolle Beschaffung</a></li>
+                    <li><a href="#">Karriere</a></li>
+                    <li><a href="#">Inhaltsübersicht</a></li>
+                    <li><a href="#">Inhaltsübersicht Artikel</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>📋 RECHTLICHES</h4>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Allgemeine Geschäftsbedingungen</a></li>
+                    <li><a href="#">Allgemeine Einkaufsbedingungen</a></li>
+                    <li><a href="#">Ethikkodex</a></li>
+                    <li><a href="#">Datenschutzrichtlinie</a></li>
+                    <li><a href="#">Datenschutzinformationen für Handelspartner</a></li>
+                    <li><a href="#">Richtlinien zu Cookies</a></li>
+                    <li><a href="#">Cookies Verwalten</a></li>
+                    <li><a href="#">Online Streitbeilegung</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="social-icons">
+            <div class="country-selector">🌐 Deutschland | DE €</div>
+            <span class="social-icon">📷</span>
+            <span class="social-icon">f</span>
+            <span class="social-icon">𝕏</span>
+            <span class="social-icon">P</span>
+            <span class="social-icon">▶</span>
+            <span class="social-icon">in</span>
+            <span class="social-icon">💬</span>
+            <span class="social-icon">微</span>
+            <span class="social-icon">♪</span>
+        </div>
+    </footer>
+    </div>
+    <!-- End Main Page -->
+
+    <!-- Product Detail Page (initially hidden) -->
+    <div id="product-page" style="display: none;">
+        <!-- Header (same as main page) -->
+        <header>
+            <div class="header-container">
+                <div class="logo">VERSACE</div>
+                <nav>
+                    <ul>
+                        <li><a href="#geschenke">Geschenke</a></li>
+                        <li><a href="#neuzugaenge">Neuzugänge</a></li>
+                        <li><a href="#taschen">Taschen</a></li>
+                        <li><a href="#damen">Damen</a></li>
+                        <li><a href="#herren">Herren</a></li>
+                        <li><a href="#duefte">Düfte</a></li>
+                        <li><a href="#home">Home & Lifestyle</a></li>
+                        <li><a href="#kinder">Kinder</a></li>
+                        <li><a href="#jeans">Jeans Couture</a></li>
+                        <li><a href="#stories">Stories</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <span class="icon">🔍</span>
+                    <span class="icon">♡</span>
+                    <span class="icon">👤</span>
+                    <span class="icon">🛍</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Product Section -->
+        <section class="product-detail">
+            <div class="product-container">
+                <div class="product-gallery">
+                    <div class="gallery-item gallery-large">
+                        <img id="product-img-1" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='500'><rect fill='%23f0ebe5'/><rect x='80' y='30' width='240' height='420' fill='%23000'/><circle cx='200' cy='150' r='60' fill='%23d4af37'/><text x='200' y='300' font-size='24' fill='%23d4af37' text-anchor='middle'>VERSACE</text><text x='200' y='340' font-size='18' fill='%23d4af37' text-anchor='middle'>SPAGHETTI</text><rect x='100' y='380' width='200' height='80' fill='%23f4e4a0'/></svg>" alt="Versace Spaghetti">
+                    </div>
+                    <div class="gallery-item">
+                        <img id="product-img-2" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='250'><rect fill='%23e8e8e8'/><rect x='80' y='60' width='140' height='130' fill='%23000'/><circle cx='150' cy='100' r='30' fill='%23d4af37'/><rect x='100' y='150' width='100' height='30' fill='%23f4e4a0'/></svg>" alt="Versace Pasta Detail">
+                    </div>
+                    <div class="gallery-item">
+                        <img id="product-img-3" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='250'><rect fill='%23c4b5a0'/><circle cx='150' cy='125' r='80' fill='%23000'/><text x='150' y='135' font-size='16' fill='%23d4af37' text-anchor='middle'>KITCHEN</text></svg>" alt="Lifestyle Bild">
+                    </div>
+                </div>
+
+                <div class="product-info-detail">
+                    <h1 class="product-title">VERSACE AL DENTE</h1>
+                    
+                    <div class="product-pricing">
+                        <span class="price">29 €</span>
+                        <span class="weight">500 g</span>
+                    </div>
+
+                    <div class="pasta-selector">
+                        <h3>SORTE AUSWÄHLEN:</h3>
+                        <div class="pasta-options">
+                            <button class="pasta-btn active" data-type="spaghetti">Spaghetti</button>
+                            <button class="pasta-btn" data-type="penne">Penne</button>
+                            <button class="pasta-btn" data-type="pastina">Pastina</button>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart">In den Warenkorb</button>
+
+                    <div class="product-details-section">
+                        <h3>Produktdetails:</h3>
+                        <p>100% italienisches Hartweizengries. Made in Italy.<br>
+                        Verpackung aus hochwertigem Papier.</p>
+                    </div>
+
+                    <div class="nutrition-info">
+                        <h3>Nährwerte:</h3>
+                        <p style="margin-bottom: 10px;">Durchschnittliche Nährwerte pro 100 g ungekocht</p>
+                        <table class="nutrition-table">
+                            <tr>
+                                <td>Energie</td>
+                                <td>1522 kJ / 359 kcal</td>
+                            </tr>
+                            <tr>
+                                <td>Fett</td>
+                                <td>1,9 g</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;davon gesättigte Fettsäuren</td>
+                                <td>0,4 g</td>
+                            </tr>
+                            <tr>
+                                <td>Kohlenhydrate</td>
+                                <td>70,1 g</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;&nbsp;davon Zucker</td>
+                                <td>3,0 g</td>
+                            </tr>
+                            <tr>
+                                <td>Eiweiß</td>
+                                <td>12,0 g</td>
+                            </tr>
+                            <tr>
+                                <td>Salz</td>
+                                <td>0,01 g</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter (same as main page) -->
+        <section class="newsletter">
+            <p>Melden Sie sich für unsere E-Mails an, um über Veranstaltungen, Kollektionen und exklusive Neuigkeiten auf dem Laufenden zu bleiben.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" class="newsletter-input" placeholder="Geben Sie Ihre E-Mail-Adresse ein *" required>
+                <button type="submit" class="newsletter-submit">→</button>
+            </form>
+            <p class="required-text">*Erforderlich</p>
+        </section>
+
+        <!-- Footer (same as main page) -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>📍 STORE-FINDER</h4>
+                    <ul>
+                        <li><a href="#">Boutique finden</a></li>
+                        <li><a href="#">Vereinbaren Sie einen Termin</a></li>
+                        <li><a href="#">Versace Uhren Stores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>📱 KUNDENSERVICE</h4>
+                    <ul>
+                        <li><a href="#">Exklusive Services</a></li>
+                        <li><a href="#">Pflegeanleitungen</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="#">Hilfe & FAQs</a></li>
+                        <li><a href="#">Bestellungen & Versand</a></li>
+                        <li><a href="#">Rücksendungen & Rückerstattungen</a></li>
+                        <li><a href="#">Bestellverfolgung</a></li>
+                        <li><a href="#">Authentizität</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>👤 ÜBER UNS</h4>
+                    <ul>
+                        <li><a href="#">Firmenprofil</a></li>
+                        <li><a href="#">Firmendaten</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Verantwortungsvolle Beschaffung</a></li>
+                        <li><a href="#">Karriere</a></li>
+                        <li><a href="#">Inhaltsübersicht</a></li>
+                        <li><a href="#">Inhaltsübersicht Artikel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>📋 RECHTLICHES</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Allgemeine Geschäftsbedingungen</a></li>
+                        <li><a href="#">Allgemeine Einkaufsbedingungen</a></li>
+                        <li><a href="#">Ethikkodex</a></li>
+                        <li><a href="#">Datenschutzrichtlinie</a></li>
+                        <li><a href="#">Datenschutzinformationen für Handelspartner</a></li>
+                        <li><a href="#">Richtlinien zu Cookies</a></li>
+                        <li><a href="#">Cookies Verwalten</a></li>
+                        <li><a href="#">Online Streitbeilegung</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-icons">
+                <div class="country-selector">🌐 Deutschland | DE €</div>
+                <span class="social-icon">📷</span>
+                <span class="social-icon">f</span>
+                <span class="social-icon">𝕏</span>
+                <span class="social-icon">P</span>
+                <span class="social-icon">▶</span>
+                <span class="social-icon">in</span>
+                <span class="social-icon">💬</span>
+                <span class="social-icon">微</span>
+                <span class="social-icon">♪</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Pasta images data
+        const pastaImages = {
+            spaghetti: {
+                img1: "images/spaghetti-box.jpg",
+                img2: "images/spaghetti-detail.jpg",
+                img3: "images/spaghetti-lifestyle.jpg"
+            },
+            penne: {
+                img1: "images/penne-box.jpg",
+                img2: "images/penne-detail.jpg",
+                img3: "images/penne-lifestyle.jpg"
+            },
+            pastina: {
+                img1: "images/pastina-box.jpg",
+                img2: "images/pastina-detail.jpg",
+                img3: "images/pastina-lifestyle.jpg"
+            }
+        };
+
+        // Page navigation
+        function showProductPage() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('product-page').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showMainPage() {
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('product-page').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        // Pasta type switcher
+        function switchPastaType(type) {
+            const images = pastaImages[type];
+            document.getElementById('product-img-1').src = images.img1;
+            document.getElementById('product-img-2').src = images.img2;
+            document.getElementById('product-img-3').src = images.img3;
+
+            // Update active button
+            document.querySelectorAll('.pasta-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-type="${type}"]`).classList.add('active');
+        }
+
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Attach click event to "Jetzt entdecken" button
+            const productBtn = document.querySelector('.product-btn');
+            if (productBtn) {
+                productBtn.addEventListener('click', showProductPage);
+            }
+
+            // Pasta selector buttons
+            document.querySelectorAll('.pasta-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const type = this.getAttribute('data-type');
+                    switchPastaType(type);
+                });
+            });
+
+            // Add to cart button
+            const addToCartBtn = document.querySelector('.add-to-cart');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function() {
+                    const activeType = document.querySelector('.pasta-btn.active').getAttribute('data-type');
+                    alert(`${activeType.charAt(0).toUpperCase() + activeType.slice(1)} wurde zum Warenkorb hinzugefügt!`);
+                });
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Button hover effects
+        document.querySelectorAll('.btn, .split-btn, .product-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 100);
+            });
+        });
+
+        // Newsletter form
+        document.querySelectorAll('.newsletter-form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                alert('Vielen Dank für Ihre Anmeldung! ' + email);
+                this.querySelector('input').value = '';
+            });
+        });
+    </script>
+</body>
+</html>
