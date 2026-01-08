@@ -79,9 +79,7 @@
         .hero {
             position: relative;
             height: 600px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="600"><rect fill="%23f5f5f5"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: url('images/hero-geschenkeratgeber.png') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -558,6 +556,147 @@
             font-weight: 500;
         }
 
+        /* Target Audience Section */
+        .target-audience {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .audience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .audience-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .audience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .audience-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .audience-content h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .audience-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Production Process Section */
+        .production-section {
+            background: #f8f8f8;
+            padding: 80px 40px;
+        }
+
+        .production-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .production-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+        }
+
+        .production-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .production-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .production-step.reverse {
+            direction: rtl;
+        }
+
+        .production-step.reverse > * {
+            direction: ltr;
+        }
+
+        .production-image {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .production-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .production-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .production-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .production-content p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        @media (max-width: 968px) {
+            .audience-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .audience-image {
+                height: 400px;
+            }
+
+            .production-step {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .production-step.reverse {
+                direction: ltr;
+            }
+
+            .production-image {
+                height: 300px;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             nav ul {
@@ -665,13 +804,13 @@
     <!-- Split Section -->
     <section class="split-section">
         <div class="split-item">
-            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='500'><rect fill='%23d4c4b0'/></svg>" alt="Damen">
+            <img src="images/damen-neuheiten.png" alt="Damen">
             <div class="split-content">
                 <button class="split-btn">Neuheiten für Damen</button>
             </div>
         </div>
         <div class="split-item">
-            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='700' height='500'><rect fill='%236b7280'/></svg>" alt="Herren">
+            <img src="images/herren-neuheiten.png" alt="Herren">
             <div class="split-content">
                 <button class="split-btn">Neuheiten für Herren</button>
             </div>
@@ -875,6 +1014,57 @@
             </div>
         </section>
 
+        <!-- Target Audience Section -->
+        <section class="target-audience">
+            <div class="audience-container">
+                <div class="audience-image">
+                    <img id="audience-img" src="images/zielgruppe-spaghetti.png" alt="Lifestyle">
+                </div>
+                <div class="audience-content">
+                    <h2 id="audience-title">Gemeinsame Momente, ungeplant und echt</h2>
+                    <p id="audience-text-1">Spaghetti für Abende, an denen Zeit keine Rolle spielt. Geteilt mit Freunden, begleitet von Gesprächen, Lachen und gutem Geschmack.</p>
+                    <p id="audience-text-2">Unkompliziert im Rezept, stilvoll im Auftritt. Ein Klassiker für moderne Momente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Production Process Section -->
+        <section class="production-section">
+            <div class="production-container">
+                <h2 class="production-title">Die Kunst der Pasta-Herstellung</h2>
+
+                <div class="production-step">
+                    <div class="production-image">
+                        <img src="images/herstellung-schritt1.png" alt="Hartweizen Auswahl">
+                    </div>
+                    <div class="production-content">
+                        <h3>1. Auswahl des Hartweizens</h3>
+                        <p>Nur der feinste italienische Hartweizen aus den sonnigen Regionen Süditaliens kommt für unsere Versace-Pasta in Frage. Jede Charge wird sorgfältig geprüft und erfüllt höchste Qualitätsstandards. Das goldene Korn bildet die Grundlage für den authentischen Geschmack und die perfekte Textur.</p>
+                    </div>
+                </div>
+
+                <div class="production-step reverse">
+                    <div class="production-image">
+                        <img src="images/herstellung-schritt2.png" alt="Traditionelle Verarbeitung">
+                    </div>
+                    <div class="production-content">
+                        <h3>2. Traditionelle Verarbeitung</h3>
+                        <p>In unserer Manufaktur in der Toskana wird der Teig nach jahrhundertealter Tradition langsam durch Bronzeformen gepresst. Diese traditionelle Methode gibt der Pasta ihre charakteristische raue Oberfläche, an der Saucen perfekt haften. Zeit und Handwerkskunst machen den Unterschied.</p>
+                    </div>
+                </div>
+
+                <div class="production-step">
+                    <div class="production-image">
+                        <img src="images/herstellung-schritt3.png" alt="Schonende Trocknung">
+                    </div>
+                    <div class="production-content">
+                        <h3>3. Schonende Trocknung</h3>
+                        <p>Die Pasta wird bei niedrigen Temperaturen über mehrere Stunden schonend getrocknet. Dieser geduldige Prozess bewahrt die wertvollen Nährstoffe und entwickelt das volle Aroma. Das Ergebnis ist eine Pasta mit perfektem Biss – genau so, wie es sein soll: al dente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Newsletter (same as main page) -->
         <section class="newsletter">
             <p>Melden Sie sich für unsere E-Mails an, um über Veranstaltungen, Kollektionen und exklusive Neuigkeiten auf dem Laufenden zu bleiben.</p>
@@ -971,6 +1161,28 @@
             }
         };
 
+        // Target audience content
+        const audienceContent = {
+            spaghetti: {
+                img: "images/zielgruppe-spaghetti.png",
+                title: "Gemeinsame Momente, ungeplant und echt",
+                text1: "Spaghetti für Abende, an denen Zeit keine Rolle spielt. Geteilt mit Freunden, begleitet von Gesprächen, Lachen und gutem Geschmack.",
+                text2: "Unkompliziert im Rezept, stilvoll im Auftritt. Ein Klassiker für moderne Momente."
+            },
+            penne: {
+                img: "images/zielgruppe-penne.png",
+                title: "Genuss mit Haltung",
+                text1: "Penne für Momente, in denen Qualität bewusst gewählt wird. Strukturiert, ausgewogen und verlässlich im Geschmack.",
+                text2: "Geschmack für den Alltag, veredelt für besondere Abende. Eine Pasta, die Erfahrung widerspiegelt."
+            },
+            pastina: {
+                img: "images/zielgruppe-pastina.png",
+                title: "Wenn Kochen Fürsorge bedeutet",
+                text1: "Pastina, zart geformt für kleine Hände und große Nähe. Sanft im Geschmack, vertraut im Gefühl.",
+                text2: "Ein Gericht, dass Generationen verbindet. Erinnerungen, serviert mit Wärme und Liebe."
+            }
+        };
+
         // Page navigation
         function showProductPage() {
             document.getElementById('main-page').style.display = 'none';
@@ -990,6 +1202,13 @@
             document.getElementById('product-img-1').src = images.img1;
             document.getElementById('product-img-2').src = images.img2;
             document.getElementById('product-img-3').src = images.img3;
+
+            // Update target audience section
+            const audience = audienceContent[type];
+            document.getElementById('audience-img').src = audience.img;
+            document.getElementById('audience-title').textContent = audience.title;
+            document.getElementById('audience-text-1').textContent = audience.text1;
+            document.getElementById('audience-text-2').textContent = audience.text2;
 
             // Update active button
             document.querySelectorAll('.pasta-btn').forEach(btn => {
