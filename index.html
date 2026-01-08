@@ -38,6 +38,12 @@
             font-size: 28px;
             font-weight: bold;
             letter-spacing: 3px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .logo:hover {
+            color: #d4af37;
         }
 
         nav ul {
@@ -63,12 +69,23 @@
         .header-icons {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .icon {
             cursor: pointer;
-            font-size: 20px;
             transition: transform 0.3s;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .icon:hover {
@@ -122,7 +139,10 @@
             display: flex;
             gap: 15px;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .btn {
@@ -136,6 +156,8 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s;
+            min-width: 260px;
+            white-space: nowrap;
         }
 
         .btn:hover {
@@ -147,8 +169,10 @@
         .split-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 20px;
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 40px auto 0;
+            padding: 0 20px;
         }
 
         .split-item {
@@ -763,7 +787,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo">VERSACE</div>
+            <div class="logo" onclick="showMainPage()">VERSACE</div>
             <nav>
                 <ul>
                     <li><a href="#geschenke">Geschenke</a></li>
@@ -773,16 +797,14 @@
                     <li><a href="#herren">Herren</a></li>
                     <li><a href="#duefte">Düfte</a></li>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#kinder">Kinder</a></li>
-                    <li><a href="#jeans">Couture</a></li>
-                    <li><a href="#stories">Stories</a></li>
+                    <li><a href="#jeans">Jeans Couture</a></li>
                 </ul>
             </nav>
             <div class="header-icons">
-                <span class="icon">🔍</span>
-                <span class="icon">♡</span>
-                <span class="icon">👤</span>
-                <span class="icon">🛍</span>
+                <span class="icon"><img src="images/icon-search.png" alt="Suche"></span>
+                <span class="icon"><img src="images/icon-wishlist.png" alt="Favoriten"></span>
+                <span class="icon"><img src="images/icon-account.png" alt="Account"></span>
+                <span class="icon"><img src="images/icon-cart.png" alt="Warenkorb"></span>
             </div>
         </div>
     </header>
@@ -896,11 +918,7 @@
             <span class="social-icon">📷</span>
             <span class="social-icon">f</span>
             <span class="social-icon">𝕏</span>
-            <span class="social-icon">P</span>
             <span class="social-icon">▶</span>
-            <span class="social-icon">in</span>
-            <span class="social-icon">💬</span>
-            <span class="social-icon">微</span>
             <span class="social-icon">♪</span>
         </div>
     </footer>
@@ -912,7 +930,7 @@
         <!-- Header (same as main page) -->
         <header>
             <div class="header-container">
-                <div class="logo">VERSACE</div>
+                <div class="logo" onclick="showMainPage()">VERSACE</div>
                 <nav>
                     <ul>
                         <li><a href="#geschenke">Geschenke</a></li>
@@ -922,16 +940,14 @@
                         <li><a href="#herren">Herren</a></li>
                         <li><a href="#duefte">Düfte</a></li>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#kinder">Kinder</a></li>
-                        <li><a href="#jeans">Couture</a></li>
-                        <li><a href="#stories">Stories</a></li>
+                        <li><a href="#jeans">Jeans Couture</a></li>
                     </ul>
                 </nav>
                 <div class="header-icons">
-                    <span class="icon">🔍</span>
-                    <span class="icon">♡</span>
-                    <span class="icon">👤</span>
-                    <span class="icon">🛍</span>
+                    <span class="icon"><img src="images/icon-search.png" alt="Suche"></span>
+                    <span class="icon"><img src="images/icon-wishlist.png" alt="Favoriten"></span>
+                    <span class="icon"><img src="images/icon-account.png" alt="Account"></span>
+                    <span class="icon"><img src="images/icon-cart.png" alt="Warenkorb"></span>
                 </div>
             </div>
         </header>
@@ -1021,9 +1037,9 @@
                     <img id="audience-img" src="images/zielgruppe-spaghetti.png" alt="Lifestyle">
                 </div>
                 <div class="audience-content">
-                    <h2 id="audience-title">Gemeinsame Momente, ungeplant und echt</h2>
-                    <p id="audience-text-1">Spaghetti für Abende, an denen Zeit keine Rolle spielt. Geteilt mit Freunden, begleitet von Gesprächen, Lachen und gutem Geschmack.</p>
-                    <p id="audience-text-2">Unkompliziert im Rezept, stilvoll im Auftritt. Ein Klassiker für moderne Momente.</p>
+                    <h2 id="audience-title">Für den modernen Genießer</h2>
+                    <p id="audience-text-1">Spaghetti ist mehr als nur ein Gericht – es ist ein Lebensgefühl. Perfekt für alle, die Wert auf Qualität und Stil legen.</p>
+                    <p id="audience-text-2">Ob für ein romantisches Dinner zu zweit oder einen entspannten Abend mit Freunden – Versace Spaghetti bringt italienisches Flair auf Ihren Tisch.</p>
                 </div>
             </div>
         </section>
@@ -1165,21 +1181,21 @@
         const audienceContent = {
             spaghetti: {
                 img: "images/zielgruppe-spaghetti.png",
-                title: "Gemeinsame Momente, ungeplant und echt",
-                text1: "Spaghetti für Abende, an denen Zeit keine Rolle spielt. Geteilt mit Freunden, begleitet von Gesprächen, Lachen und gutem Geschmack.",
-                text2: "Unkompliziert im Rezept, stilvoll im Auftritt. Ein Klassiker für moderne Momente."
+                title: "Für den modernen Genießer",
+                text1: "Spaghetti ist mehr als nur ein Gericht – es ist ein Lebensgefühl. Perfekt für alle, die Wert auf Qualität und Stil legen.",
+                text2: "Ob für ein romantisches Dinner zu zweit oder einen entspannten Abend mit Freunden – Versace Spaghetti bringt italienisches Flair auf Ihren Tisch."
             },
             penne: {
                 img: "images/zielgruppe-penne.png",
-                title: "Genuss mit Haltung",
-                text1: "Penne für Momente, in denen Qualität bewusst gewählt wird. Strukturiert, ausgewogen und verlässlich im Geschmack.",
-                text2: "Geschmack für den Alltag, veredelt für besondere Abende. Eine Pasta, die Erfahrung widerspiegelt."
+                title: "Für den anspruchsvollen Koch",
+                text1: "Penne ist die perfekte Wahl für kreative Köche, die ihre Leidenschaft fürs Kochen ausleben möchten. Die robuste Form hält jeder Sauce stand.",
+                text2: "Ideal für kraftvolle Gerichte mit reichhaltigen Saucen – von klassischer Arrabbiata bis zu modernen Kreationen. Versace Penne macht jeden zum Küchenchef."
             },
             pastina: {
                 img: "images/zielgruppe-pastina.png",
-                title: "Wenn Kochen Fürsorge bedeutet",
-                text1: "Pastina, zart geformt für kleine Hände und große Nähe. Sanft im Geschmack, vertraut im Gefühl.",
-                text2: "Ein Gericht, dass Generationen verbindet. Erinnerungen, serviert mit Wärme und Liebe."
+                title: "Für die ganze Familie",
+                text1: "Pastina verbindet Generationen. Diese traditionelle Pastaform ist besonders beliebt bei Kindern und erinnert Erwachsene an die Küche ihrer Großmutter.",
+                text2: "Perfekt für Suppen, als Beilage oder für die Kleinen – Versace Pastina bringt Wärme und Geborgenheit auf den Familientisch. Tradition, die verbindet."
             }
         };
 
